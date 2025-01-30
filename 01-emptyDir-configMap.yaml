@@ -3,11 +3,11 @@ kind: ConfigMap
 metadata:
   name: filebeat
 data:
-  filebeat.yaml: |
+  filebeat.yml: |
     filebeat:
       config:
         modules:
-          path: /usr/share/filebeat/modules.d/*.yaml
+          path: /usr/share/filebeat/modules.d/*.yml
           reload:
             enabled: true
       modules:
@@ -15,11 +15,10 @@ data:
         access:
           var.paths: ["/var/log/nginx/access.log*"]
         error:
-          var.paths: ["/var/log/nginx/error.log"]
-  output:
-    elasticsearch:
-      hosts: ["elasticsearch:9200"]
-
+          var.paths: ["/var/log/nginx/error.log*"]
+    output:
+      elasticsearch:
+        hosts: ["elasticsearch:9200"]
 ---
 kind: Pod
 apiVersion: v1
