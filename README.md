@@ -29,16 +29,30 @@
 # emptyDir:
 Important note: emptyDir is a ephemeral volume, it will be created when pod the created. It will be deleted when the pod the deleted. Containers inside pod can access this storage. Upto now, we have discussed pod generated logs. Pod logs and underlying server logs also important.
 
+```
 git clone https://github.com/Lingaiahthammisetti/9.17.k8s-ephemeral-volumes.git
+```
+```
 cd 9.17.k8s-ephemeral-volumes
+```
+```
 01-emptyDir-Nginx-Filebeat.yaml
 
+```
 kubens default
+```
+```
 kubectl apply -f 01-emptyDir-Nginx-Filebeat.yaml
+```
+```
 kubectl get pods
-
+```
+```
 kubectl get pod nginx -o jsonpath='{range .spec.containers[*]}{.name}{"\n"}{end}'
+```
+```
 kubectl logs nginx -c filebeat
+```
 
 Here nginx pod contains two containers one nginx, second is filebeat.
 
@@ -54,15 +68,24 @@ We have to access underlying node logs and push them to elastic search for log m
 
 Note: Daemonset will be created in kube-system namespace only.
 
-
+```
 git clone https://github.com/Lingaiahthammisetti/9.17.k8s-ephemeral-volumes.git
+```
+```
 cd 9.17.k8s-ephemeral-volumes
+```
 
 02-hostpath-DaemonSet.yaml
 
+```
 kubens default
+```
+```
 kubectl apply -f 01-emptyDir-Nginx-Filebeat.yaml
+```
+```
 kubectl get pods -n kube-system
+```
 
 Important: 3 pods are running in kube-system because 3 nodes are running right now.
 
