@@ -37,6 +37,7 @@ kubens default
 kubectl apply -f 01-emptyDir-Nginx-Filebeat.yaml
 kubectl get pods
 
+kubectl get pod nginx -o jsonpath='{range .spec.containers[*]}{.name}{"\n"}{end}'
 kubectl logs nginx -c filebeat
 
 Here nginx pod contains two containers one nginx, second is filebeat.
