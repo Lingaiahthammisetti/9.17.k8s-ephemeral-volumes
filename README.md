@@ -35,8 +35,8 @@ git clone https://github.com/Lingaiahthammisetti/9.17.k8s-ephemeral-volumes.git
 ```
 cd 9.17.k8s-ephemeral-volumes
 ```
-```
-01-emptyDir-Nginx-Filebeat.yaml
+
+* 01-emptyDir-Nginx-Filebeat.yaml
 
 ```
 kubens default
@@ -75,7 +75,7 @@ git clone https://github.com/Lingaiahthammisetti/9.17.k8s-ephemeral-volumes.git
 cd 9.17.k8s-ephemeral-volumes
 ```
 
-02-hostpath-DaemonSet.yaml
+* 02-hostpath-DaemonSet.yaml
 
 ```
 kubens default
