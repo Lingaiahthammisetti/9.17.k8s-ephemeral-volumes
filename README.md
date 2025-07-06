@@ -13,8 +13,8 @@
     * We have to remember that the volume where is located in pod, if pod deleted then that volume would also be deleted.
     * we cannot share the volume between two pods
 
-* host path definition:
-host path is a type of ephemeral volume where pod can access the underlaying host files and directories. this is dangerous, but only one case, we can use the hostpath to access the server logs and pushing them into elastic search.
+# host path definition:
+    * host path is a type of ephemeral volume where pod can access the underlaying host files and directories. this is dangerous, but only one case, we can use the hostpath to access the server logs and pushing them into elastic search.
     * From emptyDir volume, we have seen the major disadvantages, two pods won’t share volume. To overcome that problem, we can use the hostPath volume where we can map the volume of a container with a host machine (Kubernetes node).
     * In this case if pods get deleted also then we can access the volume from the host machine (Kubernetes node). And also, we can share the volume with two or multiple pods.
 
