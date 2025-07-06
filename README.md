@@ -66,4 +66,4 @@ kubectl get pods -n kube-system
 Important: 3 pods are running in kube-system because 3 nodes are running right now.
 
 # What is a Deamon Set?
-    * DeamonSet is used to run a pod on each and every node. whenever a new node is added to cluster, then Daemon Set automatically spin up the pod inside that node, whenever a node is deleted from the cluster then DaemonSet will delete the pod from that node. This is useful to collect the server logs and push them into the ElasticSearch for log monitoring. We use hostpath to access underlaying logs those should be read only.
+    DeamonSet is used to run a pod on each and every node. whenever a new node is added to cluster, then Daemon Set automatically spin up the pod inside that node, whenever a node is deleted from the cluster then DaemonSet will delete the pod from that node. This is useful to collect the server logs and push them into the ElasticSearch for log monitoring. We use hostpath to access underlaying logs those should be read only.
