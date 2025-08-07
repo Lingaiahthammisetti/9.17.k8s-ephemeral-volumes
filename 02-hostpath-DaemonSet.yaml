@@ -45,7 +45,6 @@ spec:
         hostPath:
           path: /var/log
 
-  
 # Note: We can see daemonset in kube-system.
 # kubectl get ds -n kube-system
 
