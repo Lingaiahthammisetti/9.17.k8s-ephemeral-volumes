@@ -48,29 +48,10 @@ spec:
 # Note: We can see daemonset in kube-system.
 # kubectl get ds -n kube-system
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 🔹 Key Details:
+# Namespace: kube-system (system-level components)
+# Runs on all nodes, including control plane nodes (due to tolerations)
+# Uses Fluentd image: quay.io/fluentd_elasticsearch/fluentd:v2.5.2
+# Mounts /var/log from the host in read-only mode
+# Resource limits ensure efficient resource usage
+# Can be set to high priority (commented out)
